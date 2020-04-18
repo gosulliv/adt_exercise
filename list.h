@@ -20,13 +20,14 @@ class list //this is where we house and shield the LLL of struct nodes
 		list(); //not yet
 		~list(); //not yet
 		
-		//add a video
-		//list(video video); //input datatype?
-		
-		//remove a device from a video
+		//add a video to the list
+		//list all videos in the list
+		//remove a video from the list
+	
+		//remove a device from a video 
+		//add a dvice to :
 		//display all devices for a video
-		//display all videos 
-		int displayAll();	
+		//int displayAll();	
 	private:
 		node * head;
 };

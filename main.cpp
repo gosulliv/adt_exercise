@@ -15,6 +15,7 @@ int main()
 	int timestamp;
 	int length;
 
+	//This is for testing video's add function
 	cout << "Gimme the topic: ";
 	cin.get(topic, 15, '\n');
 	cin.ignore(100, '\n');
@@ -37,9 +38,9 @@ int main()
 
 	video.add(timestamp, videoName, teacher, topic, length);
 
-	//construct a teacher, topic, and videoname
-	//add those things to the video on ln 11.
-	//gdb it afterwrds
+	//This is for testing the video's diplay function
+	video.display();	
+
 	
 	
 	//testing list::display, but not video::display in main

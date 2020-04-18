@@ -1,12 +1,19 @@
 #include <cstring>
-//#include <cctype>
+//#include <cctype> //what's this for?
 #include <iostream>
 
 //Chris Lu,
 //The code will manage a video class which allows applications
 //to create a video, add a new video, display all video contents,
 //and display video name.  The functions written here are intended to be used
-//as setters and getters for the node class
+//within the list class as an interface between the list and core node data
+
+//This is a LLL of devices
+struct device
+{
+	device * next;
+	char * deviceName;
+};
 
 class video
 {
@@ -15,19 +22,21 @@ class video
 	~video(); //deallocate any dynamic memory and reset
 
 	int add(int timeStamp, char videoName[], char teacher[], char topic[], int length);
-
-	//still need to figure out 	
-	//remove a video
+	int display(); //No args
+	
 	//add a required item to a video
+	int addDevice(char deviceName[]); //create a new node and put the attributed data into it, then it becomes head
+	
 	//remove an item for a video
 	//display all items needed for a video
-	//display all videos that need to be watched
-	//release all dynamic memory
+	
+	
 	private:
 		int timeStamp; //we're storing sequentially based on this val
 		char * videoName; //dyn arr
 		char * teacher; //dynamic arr
 		char * topic; //dyn arr
 		int length;
-		//have a list of devices for watching video
+
+		device * head;
 };

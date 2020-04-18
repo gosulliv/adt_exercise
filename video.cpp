@@ -36,3 +36,33 @@ int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[]
 	length = length_toadd; 
 	return 1;
 }
+
+int video::display()
+{
+	if((!videoName && !topic && !teacher) && (0 == length) && (0  == timeStamp)) return 0; //if empty, error!
+	else
+	{
+		//I asked a TA about whether I should cout or pass by reference for display, and they mentioned cout was perfectly fine.
+		std::cout<<std::endl;
+		std::cout<<"Video name: " << videoName << std::endl;	
+		//print timeStamp
+		std::cout<<"TimeStamp: " << timeStamp << std::endl;
+		//teacher
+		std::cout<<"Teacher: " << teacher << std::endl;
+		//topic
+		std::cout<<"Topic: " << topic << std::endl;
+		//length
+		std::cout<<"Length: " << length << std::endl;
+	}
+	return 1;
+}
+
+int video::addDevice(char deviceName_toAdd[])
+{
+	if(!deviceName_toAdd) return 0;								//guard against bad values
+	deviceName = new char[strlen(deviceName_toAdd) + 1];		//put device name into a char array
+		strcpy(deviceName, deviceName_toAdd);
+	
+		
+	return 1;
+}
