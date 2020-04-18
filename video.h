@@ -1,5 +1,5 @@
 #include <cstring>
-#include <cctype>
+//#include <cctype>
 #include <iostream>
 
 //Chris Lu,
@@ -14,7 +14,7 @@ class video
 	video(); //default constructor, initializes data members to empty
 	~video(); //deallocate any dynamic memory and reset
 
-	int add(int dateAndTimeAdded, char videoName[], char teacher[], char topic[], int length);
+	int add(int timeStamp, char videoName[], char teacher[], char topic[], int length);
 
 	//still need to figure out 	
 	//remove a video
@@ -24,10 +24,10 @@ class video
 	//display all videos that need to be watched
 	//release all dynamic memory
 	private:
-		int * dateAndTimeAdded; //we're storing sequentially based on this val
+		int timeStamp; //we're storing sequentially based on this val
 		char * videoName; //dyn arr
 		char * teacher; //dynamic arr
 		char * topic; //dyn arr
-		int * length;
+		int length;
 		//have a list of devices for watching video
 };

@@ -1,5 +1,5 @@
 #include <cstring>
-#include <cctype> //what is this?
+//#include <cctype> //what is this?
 #include <iostream> //do we need forreal?
 #include <cstdlib>
 #include "video.h"
