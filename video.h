@@ -1,7 +1,7 @@
 #include <cstring>
 //#include <cctype> //what's this for?
 #include <iostream>
-
+#include "device.h" //ok think through how you want this to work 
 //Chris Lu,
 //The code will manage a video class which allows applications
 //to create a video, add a new video, display all video contents,
@@ -9,11 +9,11 @@
 //within the list class as an interface between the list and core node data
 
 //This is a LLL of devices
-struct device
-{
-	device * next;
-	char * deviceName;
-};
+//struct device
+//{
+//	device * next;
+//	char * deviceName;
+//};
 
 class video
 {
@@ -38,5 +38,5 @@ class video
 		char * topic; //dyn arr
 		int length;
 
-		device * head;
+	//	device * head; //we need to include for access
 };

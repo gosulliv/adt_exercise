@@ -1,5 +1,6 @@
 //this is the implementation of video.h 
 #include "video.h"
+//will likely need device.h for methods
 
 video::video()
 {
@@ -21,6 +22,7 @@ video::~video()
 		delete [] topic;
 	videoName = teacher = topic = NULL;
 	timeStamp = length = 0;
+	//KILL THE LLL
 }
 
 int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[], char topic_toadd[], int length_toadd)
@@ -34,6 +36,7 @@ int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[]
 		strcpy(topic, topic_toadd); 
 	timeStamp = timeStamp_toadd;
 	length = length_toadd; 
+	//Bonus: fold in the add device	
 	return 1;
 }
 
@@ -53,16 +56,18 @@ int video::display()
 		std::cout<<"Topic: " << topic << std::endl;
 		//length
 		std::cout<<"Length: " << length << std::endl;
+	//Print the LLL
 	}
 	return 1;
 }
 
-int video::addDevice(char deviceName_toAdd[])
-{
-	if(!deviceName_toAdd) return 0;								//guard against bad values
-	deviceName = new char[strlen(deviceName_toAdd) + 1];		//put device name into a char array
-		strcpy(deviceName, deviceName_toAdd);
-	
-		
-	return 1;
-}
+//Needs device member functions!
+//int video::addDevice(char deviceName_toAdd[])
+//{
+//	if(!deviceName_toAdd) return 0;								//guard against bad values
+//	deviceName = new char[strlen(deviceName_toAdd) + 1];		//put device name into a char array
+//		strcpy(deviceName, deviceName_toAdd);
+//	device * curr = head;
+//		
+//	return 1;
+//}
