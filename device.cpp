@@ -1,22 +1,36 @@
-//This is the implementation of the constructor, destructor, add, and remove functions specific to the linear linked list of video devices that are housed within the video class.
 #include "device.h"
+using namespace std;
 
-videoDevice::videoDevice()
+//The purpose of this code is to implement member functions
+//for the device class that manage the manages a dynamically 
+//allocated array (devicename)
+
+
+/* My data members:
+	char * deviceName;
+*/
+
+device::device()
 {
-	head = NULL; 
+	deviceName = NULL;
 }
 
-videoDevice::~videoDevice()
+device::~device()
 {
-	if(this->head != NULL)
-	{
-		device * curr = head;
-		device * next = NULL;
-		while(curr != NULL)
-		{
-			next = curr->next;
-			delete curr;
-			curr = next;
-		}
-	}
+	if(deviceName)
+		delete [] deviceName;
+}
+
+int device::add(char deviceName_toadd[])
+{
+	if(!deviceName_toadd) return 0;
+	deviceName = new char[strlen(deviceName_toadd) + 1];
+		strcpy(deviceName, deviceName_toadd);
+
+	return 1;
+}
+
+int device::add(const device & new_device)
+{
+	return add(new_device.deviceName);
 }

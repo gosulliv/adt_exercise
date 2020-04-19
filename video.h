@@ -8,13 +8,6 @@
 //and display video name.  The functions written here are intended to be used
 //within the list class as an interface between the list and core node data
 
-//This is a LLL of devices
-//struct device
-//{
-//	device * next;
-//	char * deviceName;
-//};
-
 class video
 {
 	public:
@@ -25,8 +18,7 @@ class video
 	int display(); //No args
 	
 	//add a required item to a video
-	int addDevice(char deviceName[]); //create a new node and put the attributed data into it, then it becomes head
-	
+		int addDevice(char deviceName[]); //create a new node and put the attributed data into it, then it becomes head
 	//remove an item for a video
 	//display all items needed for a video
 	
