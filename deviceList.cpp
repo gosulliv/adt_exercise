@@ -1,5 +1,7 @@
-//This is the implementation of the constructor, destructor, add, and remove functions specific to the linear linked list of video devices that are housed within the video class.
 #include "deviceList.h"
+
+
+//This is the implementation of the constructor, destructor, add, and remove functions specific to the linear linked list of video devices that are housed within the video class.
 
 deviceList::deviceList()
 {
@@ -80,8 +82,16 @@ int deviceList::displayAll()
 	return 1;
 }
 
-
-
-
-
-//int deviceList::remove(const device & target_device){}
+//int deviceList::remove(const device & target_device)
+//{
+//	deviceNode * temp = new deviceNode;
+//	temp->deviceData.add(target_device);
+//	temp->next = NULL;
+//
+//	deviceNode * curr = head;
+//	while(curr)
+//	{
+//		//how do we compare stuff
+//	//	if(curr->deviceData.display());
+//	}
+//}

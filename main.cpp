@@ -14,14 +14,15 @@ int main()
 	cout << "Gimme a device:";
 	cin.get(deviceName, 30, '\n');
 	cin.ignore(100, '\n');
-	
+
 	cout << "another!:";
 	cin.get(devName, 30, '\n');
 	cin.ignore(100, '\n');
 	
 	devtoo.add(devName);
 	devicee.add(deviceName);
-	
+	cout << devicee.get_data() << endl;
+
 	devList.add(devicee);
 	devList.add(devtoo);
 	devList.displayAll();	
@@ -45,7 +46,6 @@ int main()
 	//int timestamp;
 	//int length;
 
-	////This is for testing video's add function
 	//cout << "Gimme the topic: ";
 	//cin.get(topic, 15, '\n');
 	//cin.ignore(100, '\n');
@@ -67,8 +67,6 @@ int main()
 	//cin.ignore(100, '\n');
 
 	//video.add(timestamp, videoName, teacher, topic, length);
-
-	//This is for testing the video's diplay function
 	//video.display();	
 	
 	//testing list::display, but not video::display in main

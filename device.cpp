@@ -19,6 +19,8 @@ device::~device()
 		delete [] deviceName;
 }
 
+char * device::get_data() const { return deviceName; }
+
 int device::add(char deviceName_toadd[])
 {
 	if(!deviceName_toadd) return 0;
@@ -35,7 +37,7 @@ int device::add(const device & new_device)
 
 int device::display()
 {
-	if(deviceName)	
+	if(deviceName)	//seg
 	{	
 		std::cout << deviceName << std::endl;
 	return 1;
@@ -43,3 +45,4 @@ int device::display()
 	else
 		return 0;
 }
+
