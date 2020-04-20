@@ -1,5 +1,4 @@
 #include "device.h"
-using namespace std;
 
 //The purpose of this code is to implement member functions
 //for the device class that manage the manages a dynamically 
@@ -33,4 +32,15 @@ int device::add(char deviceName_toadd[])
 int device::add(const device & new_device)
 {
 	return add(new_device.deviceName);
+}
+
+int device::display()
+{
+	if(deviceName)	
+	{	
+		std::cout << deviceName << std::endl;
+	return 1;
+	}	
+	else
+		return 0;
 }

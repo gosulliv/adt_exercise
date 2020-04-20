@@ -1,7 +1,7 @@
 #include <cstring>
 //#include <cctype> //what's this for?
 #include <iostream>
-#include "device.h" //ok think through how you want this to work 
+#include "deviceList.h" //ok think through how you want this to work 
 //Chris Lu,
 //The code will manage a video class which allows applications
 //to create a video, add a new video, display all video contents,

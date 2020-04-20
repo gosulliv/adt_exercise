@@ -15,7 +15,7 @@ class device
 		int add(char deviceName[]); //add a new device
 		int add(const device & new_device); //add an entire device
 		int display();
-	
+		//not sure if we need a remove here	
 	private:
-			char * deviceName;	
+			char * deviceName;
 };
