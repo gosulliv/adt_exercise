@@ -1,14 +1,30 @@
 //#include "video.h"
 #include "deviceList.h"
-//#include "device.h"
 
 using namespace std;
 
 int main()
 {
 	//Testing for deviceList class
-	deviceList devList;	
+	char deviceName[30];
+	char devName[30];	
+	deviceList devList;
+	device devtoo;
+	device devicee;
+	cout << "Gimme a device:";
+	cin.get(deviceName, 30, '\n');
+	cin.ignore(100, '\n');
 	
+	cout << "another!:";
+	cin.get(devName, 30, '\n');
+	cin.ignore(100, '\n');
+	
+	devtoo.add(devName);
+	devicee.add(deviceName);
+	
+	devList.add(devicee);
+	devList.add(devtoo);
+	devList.displayAll();	
 	
 	//Testing for the Device Class
 	//char deviceName[30];

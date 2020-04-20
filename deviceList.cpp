@@ -39,18 +39,49 @@ int deviceList::add(const device & new_device) //EOL
 	deviceNode * temp = new deviceNode;
 	if(!temp) return 0;
 	temp->deviceData.add(new_device);
-	temp->next = NULL:
+	temp->next = NULL;
 
-	if(!head)
-	{
-		head = temp;
-	}
-	else
-	{
-		//EOL insert hrmm
-	}
-
+		int pos = this->length();
+		int count = 0;
+		deviceNode * curr = head;
+		deviceNode * prev = NULL;
+		while(curr && (count < pos))
+		{
+			prev = curr;
+			curr = curr->next;
+			count++;	
+		}
+		if (prev == NULL) //if the list is empty
+		{
+			temp->next = head;	
+			head = temp;
+		}
+		else if (curr == NULL)
+		{
+			prev->next = temp;
+		} 
+		else				//put it between prev and curr
+		{
+			temp->next = curr;
+			prev->next = temp;
+		}
+	return 1;
 }
 
+int deviceList::displayAll()
+{
+	if(!head) return 1;	
+	deviceNode * curr = head;
+	while(curr)
+	{
+		curr->deviceData.display();
+		curr = curr->next;
+	}
+	return 1;
+}
+
+
+
+
+
 //int deviceList::remove(const device & target_device){}
-//int deviceList::displayAll(){}

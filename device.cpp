@@ -4,7 +4,6 @@
 //for the device class that manage the manages a dynamically 
 //allocated array (devicename)
 
-
 /* My data members:
 	char * deviceName;
 */
