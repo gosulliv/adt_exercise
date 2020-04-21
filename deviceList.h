@@ -10,13 +10,6 @@
 //a device class, have methods foradding, removing, and 
 //displaying contents within the the device class.
 
-//struct deviceNode
-//{
-//	deviceNode * next;
-//	device deviceData; //NOT a pointer
-//};
-
-//do we need a dedicated device node classs godddd
 class deviceList
 {
 	public:

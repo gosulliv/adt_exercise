@@ -1,10 +1,48 @@
-#include "video.h"
-//#include "deviceList.h"
+#include "list.h"
 
 using namespace std;
-
 int main()
 {
+	char vidName1[20];
+	char teacher1[20];
+	char topic1[20];
+	int time1;
+	int length1;
+	list a_list;
+	//char vidName2[20];
+	//char teacher2[20];
+	//char topic2[20];
+	//int time2;
+	//int length2;
+	
+	//char vidName3[20];
+	//char teacher3[20];
+	//char topic3[20];
+	//int time3;
+	//int length3;
+	
+	cout <<"Video name 1:";
+	cin.get(vidName1, 20, '\n');
+	cin.ignore(100, '\n');
+
+	cout <<"teacher name 1:";
+	cin.get(teacher1, 20, '\n');
+	cin.ignore(100, '\n');
+
+	cout <<"topic  name 1:";
+	cin.get(topic1, 20, '\n');
+	cin.ignore(100, '\n');
+
+	cout <<"time 1:";
+	cin >> time1;
+	cin.ignore(100, '\n');
+
+	cout <<"length1:";
+	cin >> length1;
+	cin.ignore(100, '\n');
+
+	a_list.addVideo(time1, vidName1, teacher1, topic1, length1);
+
 	//Testing for deviceList class
 	video a_video;
 	char deviceName[30];
@@ -34,6 +72,10 @@ int main()
 	a_video.addDevice(thirdD);
 	a_video.addDevice(devicee);	
 	
+	a_video.displayAll_Devices();	
+	
+	a_video.removeDevice(devicee);
+	cout << endl;	
 	a_video.displayAll_Devices();	
 	//cout << devicee.get_data() << endl;
 	

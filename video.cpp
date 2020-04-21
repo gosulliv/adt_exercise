@@ -25,6 +25,15 @@ video::~video()
 	//KILL THE LLL
 }
 
+int video::compareVideo(const video & querent)
+{
+	if(strcmp(this->videoName, querent.videoName) == 0)
+	{
+		return 1;
+	}
+	return 0;
+}
+
 int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[], char topic_toadd[], int length_toadd)
 {
 	if(!videoName_toadd || !teacher_toadd || !topic_toadd) return 0; //RETURNING ZERO FOR FAILURE IN THIS CASE
@@ -36,13 +45,11 @@ int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[]
 		strcpy(topic, topic_toadd); 
 	timeStamp = timeStamp_toadd;
 	length = length_toadd; 
-	//Bonus: fold in the add device	
 	return 1;
 }
 
 int video::displayAll_Devices() //print videodevices
 {
-//	device * curr = devList.head;
 	devList.displayAll();
 	return 1;
 }
@@ -63,7 +70,6 @@ int video::display()
 		std::cout<<"Topic: " << topic << std::endl;
 		//length
 		std::cout<<"Length: " << length << std::endl;
-	//Print the LLL
 	}
 	return 1;
 }
@@ -79,4 +85,10 @@ int video::addDevice(const device & new_device_toadd)
 {
 	devList.add(new_device_toadd);
 	return 1;
+}
+
+int video::removeDevice(const device & target_device)
+{
+	devList.remove(target_device);
+	return 1;	
 }
