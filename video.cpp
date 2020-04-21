@@ -25,6 +25,15 @@ video::~video()
 	//KILL THE LLL
 }
 
+int video::compareTime(const video & querent)
+{
+	if(this->timeStamp < querent.timeStamp)
+	{
+		return 1;
+	}
+	return 0;
+}
+
 int video::compareVideo(const video & querent)
 {
 	if(strcmp(this->videoName, querent.videoName) == 0)
@@ -39,8 +48,7 @@ int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[]
 	if(!videoName_toadd || !teacher_toadd || !topic_toadd) return 0; //RETURNING ZERO FOR FAILURE IN THIS CASE
 	videoName = new char[strlen(videoName_toadd) + 1]; 
 		strcpy(videoName, videoName_toadd); 
-	teacher = new char[strlen(teacher_toadd) + 1]; 
-		strcpy(teacher, teacher_toadd);
+	teacher = new char[strlen(teacher_toadd) + 1]; strcpy(teacher, teacher_toadd);
 	topic = new char[strlen(topic_toadd) + 1];
 		strcpy(topic, topic_toadd); 
 	timeStamp = timeStamp_toadd;

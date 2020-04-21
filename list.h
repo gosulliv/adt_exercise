@@ -21,14 +21,20 @@ class list //this is where we house and shield the LLL of struct nodes
 	public:
 		list(); //not yet
 		~list(); //not yet
-	
-		int addDevice(char * deviceName_toAdd);
-		int addVideo(int timeStamp, char videoName[], char teacher[], char topic[], int length);
-		int addDevice(const device & target_device);
-		int removeDevice(const device & target_device);	
 		
-		int displayDevices(const video & target_vid); //not sure about our args
-		int displayVideos(); //list all videos in the list
+
+		int addDevice(const device & target_device); //unwritten
+		int removeDevice(const device & target_device);	//unwritten
+	
+		int createVideo(const video & vid_toAdd); //don't exist
+		int insertVideo(const video vid_toAdd); //don't exist
+		int addDevice(char * deviceName_toAdd);		//don't exist
+		
+		int displayDevices(const video & target_vid);
+		int displayVideos(); //list all videos in the list	
+		int posInsert(int pos, node * target);
+		int addVideo(int timeStamp, char videoName[], char teacher[], char topic[], int length);
+		//int addVideo(const video & vid_toAdd);	
 	
 	private:
 		node * head;

@@ -21,6 +21,8 @@ class video
 	int addDevice(const device & new_device_toadd);
 	int removeDevice(const device & target_device);
 	int compareVideo(const video & querent);
+	int compareTime(const video & querent);
+	int sortVideo(const video & querent);
 	private:
 		int timeStamp; //we're storing sequentially based on this val
 		char * videoName; //dyn arr

@@ -9,11 +9,12 @@ int main()
 	int time1;
 	int length1;
 	list a_list;
-	//char vidName2[20];
-	//char teacher2[20];
-	//char topic2[20];
-	//int time2;
-	//int length2;
+	
+	char vidName2[20];
+	char teacher2[20];
+	char topic2[20];
+	int time2;
+	int length2;
 	
 	//char vidName3[20];
 	//char teacher3[20];
@@ -41,42 +42,66 @@ int main()
 	cin >> length1;
 	cin.ignore(100, '\n');
 
+	
+	cout <<"Video name 2:";
+	cin.get(vidName2, 20, '\n');
+	cin.ignore(100, '\n');
+
+	cout <<"teacher name 2:";
+	cin.get(teacher2, 20, '\n');
+	cin.ignore(100, '\n');
+
+	cout <<"topic  name 2:";
+	cin.get(topic2, 20, '\n');
+	cin.ignore(100, '\n');
+
+	cout <<"time 2:";
+	cin >> time2;
+	cin.ignore(100, '\n');
+
+	cout <<"length2:";
+	cin >> length2;
+	cin.ignore(100, '\n');
+
 	a_list.addVideo(time1, vidName1, teacher1, topic1, length1);
+	a_list.addVideo(time2, vidName2, teacher2, topic2, length2);
+	
 
+	a_list.displayVideos();
 	//Testing for deviceList class
-	video a_video;
-	char deviceName[30];
-	char devName[30];	
-	char thirdName[30];	
-	deviceList devList;
-	device devtoo;
-	device devicee;
-	device thirdD;	
-	cout << "Gimme a device:";
-	cin.get(deviceName, 30, '\n');
-	cin.ignore(100, '\n');
+	//video a_video;
+	//char deviceName[30];
+	//char devName[30];	
+	//char thirdName[30];	
+	//deviceList devList;
+	//device devtoo;
+	//device devicee;
+	//device thirdD;	
+	//cout << "Gimme a device:";
+	//cin.get(deviceName, 30, '\n');
+	//cin.ignore(100, '\n');
 
-	cout << "another!:";
-	cin.get(devName, 30, '\n');
-	cin.ignore(100, '\n');
+	//cout << "another!:";
+	//cin.get(devName, 30, '\n');
+	//cin.ignore(100, '\n');
 
-	cout << "third:";
-	cin.get(thirdName, 30, '\n');
-	cin.ignore(100, '\n');
+	//cout << "third:";
+	//cin.get(thirdName, 30, '\n');
+	//cin.ignore(100, '\n');
 
-	thirdD.add(thirdName);
-	devtoo.add(devName);
-	devicee.add(deviceName);
+	//thirdD.add(thirdName);
+	//devtoo.add(devName);
+	//devicee.add(deviceName);
 
-	a_video.addDevice(devtoo);
-	a_video.addDevice(thirdD);
-	a_video.addDevice(devicee);	
+	//a_video.addDevice(devtoo);
+	//a_video.addDevice(thirdD);
+	//a_video.addDevice(devicee);	
 	
-	a_video.displayAll_Devices();	
+	//a_video.displayAll_Devices();	
 	
-	a_video.removeDevice(devicee);
-	cout << endl;	
-	a_video.displayAll_Devices();	
+	//a_video.removeDevice(devicee);
+	//cout << endl;	
+	//a_video.displayAll_Devices();	
 	//cout << devicee.get_data() << endl;
 	
 	//devList.add(thirdD);
