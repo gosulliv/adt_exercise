@@ -40,6 +40,13 @@ int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[]
 	return 1;
 }
 
+int video::displayAll_Devices() //print videodevices
+{
+//	device * curr = devList.head;
+	devList.displayAll();
+	return 1;
+}
+
 int video::display()
 {
 	if((!videoName && !topic && !teacher) && (0 == length) && (0  == timeStamp)) return 0; //if empty, error!
@@ -62,12 +69,14 @@ int video::display()
 }
 
 //Needs device member functions!
-//int video::addDevice(char deviceName_toAdd[])
-//{
-//	if(!deviceName_toAdd) return 0;								//guard against bad values
-//	deviceName = new char[strlen(deviceName_toAdd) + 1];		//put device name into a char array
-//		strcpy(deviceName, deviceName_toAdd);
-//	device * curr = head;
-//		
-//	return 1;
-//}
+int video::addDevice(char * deviceName_toAdd)
+{
+	devList.add(deviceName_toAdd);	
+	return 1;
+}
+
+int video::addDevice(const device & new_device_toadd)
+{
+	devList.add(new_device_toadd);
+	return 1;
+}

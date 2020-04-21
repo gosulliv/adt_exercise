@@ -16,12 +16,13 @@ class video
 
 	int add(int timeStamp, char videoName[], char teacher[], char topic[], int length);
 	int display(); //No args
+	int displayAll_Devices(); //iterate through the list diplaying stuff
+	int addVideoItem();
+	//int addDevice(char deviceName[]); //create a new node and put the attributed data into it, then it becomes head
+	int addDevice(char * deviceName_toAdd);
+	int addDevice(const device & new_device_toadd);
 	
-	//add a required item to a video
-		int addDevice(char deviceName[]); //create a new node and put the attributed data into it, then it becomes head
 	//remove an item for a video
-	//display all items needed for a video
-	
 	
 	private:
 		int timeStamp; //we're storing sequentially based on this val
@@ -29,6 +30,6 @@ class video
 		char * teacher; //dynamic arr
 		char * topic; //dyn arr
 		int length;
-
+		deviceList devList;
 	//	device * head; //we need to include for access
 };

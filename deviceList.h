@@ -10,11 +10,11 @@
 //a device class, have methods foradding, removing, and 
 //displaying contents within the the device class.
 
-struct deviceNode
-{
-	deviceNode * next;
-	device deviceData; //NOT a pointer
-};
+//struct deviceNode
+//{
+//	deviceNode * next;
+//	device deviceData; //NOT a pointer
+//};
 
 //do we need a dedicated device node classs godddd
 class deviceList
@@ -24,10 +24,15 @@ class deviceList
 		~deviceList(); //default destructor
 	
 		int length(); //RETURNS LENGTH
+		device * find(device *);
+		
+		int add(char * device);	
 		int add(const device & new_device);	
+		
+		int remove(int pos); //positional removal	
 		int remove(const device & target_device); //deviceNoOde?
 		int displayAll();	
 	private:
-		deviceNode * head;
+		device * head;
 };
 

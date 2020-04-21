@@ -19,7 +19,18 @@ device::~device()
 		delete [] deviceName;
 }
 
-char * device::get_data() const { return deviceName; }
+char * device::get_data() { return deviceName; }
+
+device *& device::to_next() { return next;} 
+
+int device::compare(const device & querent) // ithink this might should be a deviceList method
+{
+	if(strcmp(this->deviceName, querent.deviceName) == 0)
+	{
+		return 1;
+	}
+	return 0;
+}
 
 int device::add(char deviceName_toadd[])
 {
@@ -42,7 +53,6 @@ int device::display()
 		std::cout << deviceName << std::endl;
 	return 1;
 	}	
-	else
-		return 0;
+	return 0;
 }
 

@@ -15,8 +15,11 @@ class device
 		int add(char deviceName[]); //add a new device
 		int add(const device & new_device); //add an entire device
 		int display();
-		//we need an accessoAr? that we can use for find and searches
-		char * get_data() const; //accessor	
+		int compare(const device & a_device);
+
+		char * get_data(); //accessor	
+		device * & to_next();		
 	private:
 			char * deviceName;
+			device * next;
 };
