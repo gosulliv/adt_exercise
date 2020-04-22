@@ -32,6 +32,15 @@ int device::compare(const device & querent) // ithink this might should be a dev
 	return 0;
 }
 
+int device::compare(char * deviceName)
+{
+	if(strcmp(this->deviceName, deviceName) == 0)
+	{
+		return 1;
+	}
+	return 0;
+}
+
 int device::add(char deviceName_toadd[])
 {
 	if(!deviceName_toadd) return 0;

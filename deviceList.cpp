@@ -157,6 +157,22 @@ int deviceList::remove(int pos)
 	return 0;
 }
 
+int deviceList::remove(char * deviceName)
+{
+	device * curr = head;
+	int pos = 0;
+	while(curr)
+	{
+		if(curr->compare(deviceName))
+		{
+			remove(pos);
+		}
+		pos++;
+		curr = curr->to_next();
+	}
+	return 0;
+}
+
 int deviceList::remove(const device & target_device)
 {
 	device * curr = head;

@@ -16,10 +16,10 @@ class device
 		int add(const device & new_device); //add an entire device
 		int display();
 		int compare(const device & a_device);
-
+		int compare(char * deviceName);
 		char * get_data(); //accessor	
 		device * & to_next();		
 	private:
-			char * deviceName;
-			device * next;
+		char * deviceName;
+		device * next;
 };

@@ -1,4 +1,4 @@
-#include <cstring>
+
 //#include <cctype> //what's this for?
 #include <iostream>
 #include "deviceList.h" //ok think through how you want this to work 
@@ -20,7 +20,9 @@ class video
 	int addDevice(char * deviceName_toAdd);
 	int addDevice(const device & new_device_toadd);
 	int removeDevice(const device & target_device);
+	int removeDevice(char * deviceName);
 	int compareVideo(const video & querent);
+	int compareVideo(char * videoName);
 	int compareTime(const video & querent);
 	int sortVideo(const video & querent);
 	private:

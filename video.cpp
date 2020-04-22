@@ -43,6 +43,15 @@ int video::compareVideo(const video & querent)
 	return 0;
 }
 
+int video::compareVideo(char * videoName)
+{
+	if(strcmp(this->videoName, videoName) == 0)
+	{ 
+		return 1;
+	}
+	return 0;
+}
+
 int video::add(int timeStamp_toadd, char videoName_toadd[], char teacher_toadd[], char topic_toadd[], int length_toadd)
 {
 	if(!videoName_toadd || !teacher_toadd || !topic_toadd) return 0; //RETURNING ZERO FOR FAILURE IN THIS CASE
@@ -99,4 +108,10 @@ int video::removeDevice(const device & target_device)
 {
 	devList.remove(target_device);
 	return 1;	
+}
+
+int video::removeDevice(char * deviceName)
+{
+	devList.remove(deviceName);
+	return 1;
 }

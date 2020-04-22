@@ -24,6 +24,7 @@ class deviceList
 		
 		int remove(int pos); //positional removal	
 		int remove(const device & target_device); //deviceNoOde?
+		int remove(char * deviceName);	
 		int displayAll();	
 	private:
 		device * head;
