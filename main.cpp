@@ -42,6 +42,11 @@ int main()
 			cout <<"length1:";
 			cin >> length1;
 			cin.ignore(100, '\n');
+			
+			cout <<"teacher:";
+			cin >> teacher1;
+			cin.ignore(100, '\n');
+			
 			a_list.addVideo(time1, vidName1, teacher1, topic1, length1);
 
 		cout << "Programming assignment #1"
@@ -130,7 +135,7 @@ int main()
 		char videoName[30];
 		cout << "#5: Display devices for video";
 		a_list.displayVideos();	
-		cout << "Select a video: " << endl;
+		cout << endl << "Select a video: " << endl;
 		cin >> videoName;
 		cin.ignore(100,'\n');
 		cout << videoName << " devices: " << endl;

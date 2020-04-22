@@ -1,10 +1,12 @@
 #include <cstring>
-//#include <cctype> //what is this?
 #include <iostream> //do we need forreal?
 #include <cstdlib>
 #include "video.h"
 
 //Chris Lu
+//CS 163
+//Project #1
+//List.h
 //This code exists to manage the list class. This class
 //acts as the client-facing interface.  This class houses a linear
 //linked list of videos.  Each video node contains it's own list of
@@ -13,28 +15,34 @@
 struct node
 {
 	node * next;
-	video a_video; //use video member methods for access
+	video a_video; //the videoclass houses the add/remove functions this layer draws on
 };
 
-class list //this is where we house and shield the LLL of struct nodes
+class list
 {
 	public:
-		list(); //not yet
-		~list(); //not yet
-		
+		list(); //Constructor initlizes the node completely empty
+		~list(); //deletes the node (which invokes the video destructor)
+	
+		//addVideo creates a video class with the given arguements, then puts video into a node
 		int addVideo(int timeStamp, char videoName[], char teacher[], char topic[], int length);
-		int displayVideos(); //list all videos in the list	
-		int posInsert(int pos, node * target);
 
-		int addDevice(char * deviceName_toAdd, char * videoName); //needs testing
-		int addDevice(const device & target_device, char * videoName); //needs testing 
-		int removeDevice(device & target_device, char * videoName);
-		int removeDevice(char * deviceName, char * videoName);
-		int displayDevices(const video & target_vid);					//needs testing
-		int displayDevices(char * videoName);	
+		//displayVideos iterates through the list of nodes, displaying each's data.
+		int displayVideos();
+
+		//addDevice finds the video by name and puts a device into its devicelist
+		int addDevice(char * deviceName_toAdd, char * videoName); //the char array version
+		int addDevice(const device & target_device, char * videoName); //the class version
+	
+		//removeDevice finds the video by name, then finds the device by name and deletes it
+		int removeDevice(device & target_device, char * videoName); //the device class version
+		int removeDevice(char * deviceName, char * videoName); //the char array version
+
+		//diplayDevices 
+		int displayDevices(const video & target_vid); //the class version
+		int displayDevices(char * videoName); //the char array version	
 		
-		//int addVideo(const video & vid_toAdd);	//i'd prefer not
 	
 	private:
-		node * head;
+		node * head; //THis linear linked list is ordered by time value!
 };
