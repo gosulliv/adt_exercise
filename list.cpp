@@ -29,7 +29,7 @@ list::~list()
 	}
 }
 
-//addDevice searches for a matching video and calls on a wrapper function in device to add a device
+//addDevice searches for a matching video and calls on a wrapper function in device to add a device.
 int list::addDevice(char * deviceName_toAdd, char * videoName) //This one takes a char array!
 {
 	node * curr = head;
@@ -44,7 +44,7 @@ int list::addDevice(char * deviceName_toAdd, char * videoName) //This one takes 
 	return 1;
 }
 
-//addDevice iterates through its list to find a matching video, then calls calls device's addDevice
+//addDevice iterates through its list to find a matching video, then calls calls device's addDevice.
 int list::addDevice(const device & target_device, char * videoName) //This one takes a device class
 {
 	node * curr = head;		//See the function above for comments
@@ -59,7 +59,7 @@ int list::addDevice(const device & target_device, char * videoName) //This one t
 	return 1;
 }
 
-//This function iterates through its list until it finds a matching video, then calls device's functions
+//This function iterates through its list until it finds a matching video, then calls device's functions.
 int list::removeDevice(device & target_device, char * videoName) //this one takes a device class!
 {
 	node * curr = head;
@@ -75,7 +75,7 @@ int list::removeDevice(device & target_device, char * videoName) //this one take
 	return 0;
 }
 
-//See function above, except this one takes a char array instead of a device class
+//See function above, except this one takes a char array instead of a device class.
 int list::removeDevice(char * deviceName, char * videoName) //this one takes a char array
 {
 	node * curr = head;
@@ -91,7 +91,7 @@ int list::removeDevice(char * deviceName, char * videoName) //this one takes a c
 	return 0;
 }
 
-//This function creates a video class with the function's args and puts it in a node, adding it into the list
+//This function creates a video class with the function's args and puts it in a node, adding it into the list.
 int list::addVideo(int timeStamp, char videoName[], char teacher[], char topic[], int length)
 {
 	if(!videoName || !teacher || !topic) return 0;
@@ -131,7 +131,7 @@ int list::addVideo(int timeStamp, char videoName[], char teacher[], char topic[]
 	return 1;
 }
 
-//This function iterates through the list, calling each video class's display function
+//This function iterates through the list, calling each video class's display function.
 int list::displayVideos() 
 {
 	node * curr = head;
@@ -143,7 +143,7 @@ int list::displayVideos()
 	return 1;
 }
 
-//DisplayDevices iterates through the list until it finds it's matching video and displays it's devlicelist
+//DisplayDevices iterates through the list until it finds it's matching video and displays it's devlicelist.
 int list::displayDevices(const video & target_vid)
 {
 	node * curr = head;

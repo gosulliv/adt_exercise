@@ -1,15 +1,18 @@
 #include "deviceList.h"
-
+//Chris Lu
+//cs 163
+//project #1
+//deviceList.cpp
 //This is the implementation of the constructor, destructor, add, and remove functions specific to the linear linked list of video devices that are housed within the video class.
 
-deviceList::deviceList()
+deviceList::deviceList() //This is our default constructor.
 {
 	head = NULL; 
 }
 
-deviceList::~deviceList()
+deviceList::~deviceList() //This is our default destructor.
 {
-	if(this->head != NULL)
+	if(this->head != NULL) //If there is a list, iterate through and delete everything.
 	{
 		device * curr = head;
 		device * next = NULL;
@@ -20,10 +23,10 @@ deviceList::~deviceList()
 			curr = next;
 		}
 	}
-	head = NULL;
+	head = NULL; //Also get rid of head.
 }
 
-int deviceList::length()
+int deviceList::length() //Sums the length of the list.
 {
 	device * curr = head;
 	int size = 0;
@@ -32,14 +35,14 @@ int deviceList::length()
 		size++;
 		curr = curr->to_next();
 	}
-	return size;
+	return size; //Returns the number of nodes counted.
 }
 
-int deviceList::add(const device & new_device) //EOL
+int deviceList::add(const device & new_device) //Copies the argument's member values into a new node and positionally inserts it into the deviceList.
 {
 	device * temp = new device;
 	if(!temp) return 0;
-	temp->add(new_device);	
+	temp->add(new_device);	//Add copies its argument into device's data member.
 	temp->to_next() = NULL;
 
 		int pos = this->length();
@@ -61,7 +64,7 @@ int deviceList::add(const device & new_device) //EOL
 		{
 			prev->to_next() = temp;
 		} 
-		else				//put it between prev and curr
+		else //put it between prev and curr
 		{
 			temp->to_next() = curr;
 			prev->to_next() = temp;
@@ -69,7 +72,7 @@ int deviceList::add(const device & new_device) //EOL
 	return 1;
 }
 
-int deviceList::add(char * devicename) //EOL
+int deviceList::add(char * devicename) //Identical to the function above, except it takes an array.
 {
 	device * temp = new device;
 	if(!temp) return 0;
@@ -102,33 +105,22 @@ int deviceList::add(char * devicename) //EOL
 		}
 	return 1;
 }
+
+//DisplayAll iterates through the linked list, calling each node's display function.
 int deviceList::displayAll()
 {
 	if(!head) return 1;	
 	device * curr = head;
 	while(curr)
 	{
-		curr->display();
+		curr->display(); //This function couts it's data member's value.
 		curr = curr->to_next();
 	}
 	return 1;
 }
 
-//carefulu with this bb
-device * deviceList::find(device * target)
-{
-	device * curr = head;
-	while(curr != NULL)
-	{
-		if(curr->get_data() == target->get_data())
-		{
-		return curr;	
-		}
-		curr = curr->to_next();	
-	}
-	return  curr;
-}
-
+//This positional removal function checks the arguement then iterates to the position 
+//of the node in the list, connects previous to current deleting the target node.
 int deviceList::remove(int pos)
 {
 	if(pos < 0 || pos >= this->length()) return 0; //guard against bad pos inputs
@@ -157,15 +149,17 @@ int deviceList::remove(int pos)
 	return 0;
 }
 
+//This is a wrapper function that takes a character array, iterates through 
+//the the list for a matching value, then calls the positional deletion function created above.
 int deviceList::remove(char * deviceName)
 {
 	device * curr = head;
 	int pos = 0;
 	while(curr)
 	{
-		if(curr->compare(deviceName))
+		if(curr->compare(deviceName)) //This comparison is a strcmp that returns 0 if there is a match.
 		{
-			remove(pos);
+			remove(pos); //This is the positional removal on line 124.
 		}
 		pos++;
 		curr = curr->to_next();
@@ -173,6 +167,7 @@ int deviceList::remove(char * deviceName)
 	return 0;
 }
 
+//This function is identical to the one above, except it takes a node.
 int deviceList::remove(const device & target_device)
 {
 	device * curr = head;

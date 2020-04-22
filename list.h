@@ -21,24 +21,24 @@ struct node
 class list
 {
 	public:
-		list(); //Constructor initlizes the node completely empty
-		~list(); //deletes the node (which invokes the video destructor)
+		list(); //Constructor initlizes the node completely empty.
+		~list(); //deletes the node (which invokes the video destructor.
 	
-		//addVideo creates a video class with the given arguements, then puts video into a node
+		//addVideo creates a video class with the given arguements, then puts video into a node.
 		int addVideo(int timeStamp, char videoName[], char teacher[], char topic[], int length);
 
 		//displayVideos iterates through the list of nodes, displaying each's data.
 		int displayVideos();
 
-		//addDevice finds the video by name and puts a device into its devicelist
+		//addDevice finds the video by name and puts a device into its devicelist.
 		int addDevice(char * deviceName_toAdd, char * videoName); //the char array version
 		int addDevice(const device & target_device, char * videoName); //the class version
 	
-		//removeDevice finds the video by name, then finds the device by name and deletes it
+		//removeDevice finds the video by name, then finds the device by name and deletes it.
 		int removeDevice(device & target_device, char * videoName); //the device class version
 		int removeDevice(char * deviceName, char * videoName); //the char array version
 
-		//diplayDevices 
+		//diplayDevices iterates through the list, calling the display function of each node. 
 		int displayDevices(const video & target_vid); //the class version
 		int displayDevices(char * videoName); //the char array version	
 		

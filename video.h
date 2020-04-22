@@ -45,5 +45,5 @@ class video
 		char * teacher; //dynamic arr
 		char * topic; //dyn arr
 		int length;
-		deviceList devList;
+		deviceList devList; //remove and add device functions are wrappers for this class' members.
 };
