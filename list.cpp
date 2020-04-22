@@ -7,7 +7,7 @@
 //contains the implementation of the functions necessary for create and delete
 //for both videos and their respective video device lists
 
-//This constructuro initializes it's only member, a head node to NUll(empty).
+//This constructor initializes its only member, a head node to NULL(empty).
 list::list()
 {
 	head = NULL;
@@ -143,7 +143,7 @@ int list::displayVideos()
 	return 1;
 }
 
-//DisplayDevices iterates through the list until it finds it's matching video and displays it's devlicelist.
+//DisplayDevices iterates through the list until it finds it's matching video and displays its devlicelist.
 int list::displayDevices(const video & target_vid)
 {
 	node * curr = head;
